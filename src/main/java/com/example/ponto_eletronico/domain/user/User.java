@@ -12,6 +12,12 @@ public class User {
     private String email;
     private String password;
 
+    @Enumerated(EnumType.STRING)
+    private UserType userType;
+
+    @Enumerated(EnumType.STRING)
+    private WorkSchedule workSchedule;
+
     public String getName() {
         return name;
     }
@@ -34,5 +40,31 @@ public class User {
 
     public String getEmail() {
         return email;
+    }
+
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public void setUserType(UserType userType) {
+        this.userType = userType;
+    }
+
+    public WorkSchedule getWorkSchedule() {
+        return workSchedule;
+    }
+
+    public void setWorkSchedule(WorkSchedule workSchedule) {
+        this.workSchedule = workSchedule;
+    }
+
+    public enum UserType {
+        ADMIN,
+        REGULAR
+    }
+
+    public enum WorkSchedule {
+        SIX_HOURS,
+        EIGHT_HOURS
     }
 }

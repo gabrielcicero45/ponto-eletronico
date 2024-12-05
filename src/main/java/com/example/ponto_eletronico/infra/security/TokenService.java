@@ -4,6 +4,7 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.exceptions.JWTVerificationException;
+import com.auth0.jwt.interfaces.DecodedJWT;
 import com.example.ponto_eletronico.domain.user.User;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -41,6 +42,17 @@ public class TokenService {
         } catch (JWTVerificationException exception) {
             return null;
         }
+    }
+
+    public DecodedJWT decodeToken(String token) {
+        return JWT.require(com.auth0.jwt.algorithms.Algorithm.HMAC256(secret))
+                .build()
+                .verify(token);
+    }
+
+    public String getEmailFromToken(String token) {
+        DecodedJWT decodedJWT = decodeToken(token);
+        return decodedJWT.getClaim("sub").asString();
     }
 
     private Instant generateExpirationDate(){

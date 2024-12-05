@@ -1,4 +1,4 @@
-package com.example.ponto_eletronico.repositories;
+package com.example.ponto_eletronico.repository;
 
 import com.example.ponto_eletronico.domain.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;

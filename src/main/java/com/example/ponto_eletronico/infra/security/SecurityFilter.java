@@ -1,7 +1,7 @@
 package com.example.ponto_eletronico.infra.security;
 
 import com.example.ponto_eletronico.domain.user.User;
-import com.example.ponto_eletronico.repositories.UserRepository;
+import com.example.ponto_eletronico.repository.UserRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

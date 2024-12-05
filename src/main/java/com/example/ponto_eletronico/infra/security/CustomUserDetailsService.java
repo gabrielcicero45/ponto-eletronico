@@ -1,7 +1,7 @@
 package com.example.ponto_eletronico.infra.security;
 
 import com.example.ponto_eletronico.domain.user.User;
-import com.example.ponto_eletronico.repositories.UserRepository;
+import com.example.ponto_eletronico.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
